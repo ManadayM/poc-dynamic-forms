@@ -1,0 +1,71 @@
+<nb-card accent="info">
+
+  <!-- Header -->
+  <nb-card-header class="flex items-center justify-center">
+    <span>{{ this.formName || "New Form" }}</span>
+
+    <div class="spacer"></div>
+
+    <div>
+      <!-- Save Button -->
+      <button status="primary" nbButton type="submit" [hidden]="this.stepper.selectedIndex !== 2">Save</button>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <nb-stepper #stepper>
+      <!-- Name -->
+      <nb-step label="Name">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="formName">Form Name</label>
+              <input id="formName" name="name" type="text" class="form-control" maxlength="50" required
+                [(ngModel)]="formName" aria-describedby="formNameHelp">
+              <small id="formNameHelp" class="form-text text-muted">
+                Give your form a unique name to recognize it easily in future.
+              </small>
+            </div>
+          </div>
+        </div>
+      </nb-step>
+
+      <!-- Builder -->
+      <nb-step label="Build">
+        <form-builder [form]="form" (change)="onChange($event)"></form-builder>
+      </nb-step>
+
+      <!-- Preview -->
+      <nb-step label="Preview">
+        <!-- <div class="well jsonviewer">
+          <pre id="json"><code class="language-json" #json></code></pre>
+        </div> -->
+        <div *ngIf="this.stepper.selectedIndex === 2">
+          <formio [form]="this.form" readOnly="true"></formio>
+        </div>
+      </nb-step>
+
+      <!-- Save -->
+      <!-- <nb-step label="Save">
+        <div class="flex items-center justify-center">
+          <button nbButton size="small" status="info" type="submit">Save</button>
+        </div>
+      </nb-step> -->
+    </nb-stepper>
+  </nb-card-body>
+
+  <nb-card-footer class="flex">
+    <div class="spacer"></div>
+
+    <!-- Stepper navigation buttons -->
+    <div>
+      <!-- Previous Button -->
+      <button class="mr-2" status="info" nbButton [disabled]="this.stepper.selectedIndex === 0"
+        (click)="this.stepper.previous()">prev</button>
+
+      <!-- Next Button -->
+      <button status="info" nbButton [disabled]="this.stepper.selectedIndex === 2"
+        (click)="this.stepper.next()">next</button>
+    </div>
+  </nb-card-footer>
+</nb-card>

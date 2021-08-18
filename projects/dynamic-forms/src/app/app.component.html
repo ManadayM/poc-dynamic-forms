@@ -1,4 +1,11 @@
-<form-builder [form]="form" (change)="onChange($event)"></form-builder>
-<div class="well jsonviewer">
-  <pre id="json"><code class="language-json" #json></code></pre>
-</div>
+<nb-layout>
+  <nb-layout-header class="flex">
+    <h1>⚡️ Dynamic Forms ⚡️</h1>
+    <div class="spacer"></div>
+    <a nbButton outline status="primary" size="small" routerLink="/builder">New Form</a>
+  </nb-layout-header>
+  <nb-layout-column class="colored-column-basic">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer>© Core IoT</nb-layout-footer>
+</nb-layout>
