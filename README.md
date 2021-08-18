@@ -1,3 +1,7 @@
+# Setup
+
+This POC requires Node v10 and Angular v7. Usage of `Node Version Manager (nvm)` is recommended to avoid causing conflicts with your latest projects.
+
 # CitFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
