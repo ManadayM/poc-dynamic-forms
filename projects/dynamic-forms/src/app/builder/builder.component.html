@@ -8,7 +8,8 @@
 
     <div>
       <!-- Save Button -->
-      <button status="primary" nbButton type="submit" [hidden]="this.stepper.selectedIndex !== 2">Save</button>
+      <button status="primary" nbButton type="submit" [hidden]="this.stepper.selectedIndex !== 2"
+        (click)="saveForm()">Save</button>
     </div>
   </nb-card-header>
 
@@ -32,7 +33,7 @@
 
       <!-- Builder -->
       <nb-step label="Build">
-        <form-builder [form]="form" (change)="onChange($event)"></form-builder>
+        <form-builder [form]="formSchema" (change)="onChange($event)"></form-builder>
       </nb-step>
 
       <!-- Preview -->
@@ -41,7 +42,7 @@
           <pre id="json"><code class="language-json" #json></code></pre>
         </div> -->
         <div *ngIf="this.stepper.selectedIndex === 2">
-          <formio [form]="this.form" readOnly="true"></formio>
+          <formio [form]="this.formSchema" readOnly="true"></formio>
         </div>
       </nb-step>
 

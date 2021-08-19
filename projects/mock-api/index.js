@@ -13,15 +13,15 @@ server.use(function (req, res, next) {
   setTimeout(next, 100);
 });
 
-router.render = (req, res) => {
-  res.status(200).jsonp({
-    meta: {
-      req_id: "abcd-efgh-12345",
-      status: 200
-    },
-    data: res.locals.data
-  })
-}
+// router.render = (req, res) => {
+//   res.status(200).jsonp({
+//     meta: {
+//       req_id: "abcd-efgh-12345",
+//       status: 200
+//     },
+//     data: res.locals.data
+//   })
+// }
 
 server.use(router);
 
