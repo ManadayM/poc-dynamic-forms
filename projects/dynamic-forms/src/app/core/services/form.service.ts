@@ -17,6 +17,10 @@ export class FormService {
     return this.http.get(this.apiUrl);
   }
 
+  get(formId: string) {
+    return this.http.get(`${this.apiUrl}/${formId}`);
+  }
+
   post(formName: string, formSchema: string) {
 
     const payload = { name: formName, schema: formSchema };

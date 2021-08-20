@@ -19,12 +19,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuilderComponent } from './builder/builder.component';
 import { ListComponent } from './list/list.component';
+import { FormViewerComponent } from './form-viewer/form-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuilderComponent,
-    ListComponent
+    ListComponent,
+    FormViewerComponent
   ],
   imports: [
     BrowserModule,
