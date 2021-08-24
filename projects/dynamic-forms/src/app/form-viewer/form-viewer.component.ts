@@ -13,9 +13,24 @@ export class FormViewerComponent implements OnInit, OnDestroy {
 
   private onDestroy$ = new Subject<void>();
 
-  public formSubmissionUrl = '';
+  public formSubmissionUrl = 'http://localhost:4469/submissions';
   public formSchema = null;
 
+  public options = {
+    "hooks": {
+      "beforeSubmit": function (submission, callback) {
+        console.log(submission);
+        // Do something asynchronously.
+        // setTimeout(function () {
+        //   // Callback with a possibly manipulated submission.
+        //   callback({
+        //     message: "Something bad happened.",
+        //     component: null
+        //   }, null);
+        // }, 1000)
+      }
+    }
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -25,9 +40,18 @@ export class FormViewerComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const formId = this.route.snapshot.paramMap.get('id');
     if (formId) {
-      this.formSubmissionUrl = `http://localhost:4469/forms/${formId}`;
+      // this.formSubmissionUrl = `http://localhost:4469/form/${formId}`;
       this.getFormSchema(formId);
     }
+  }
+
+  onSubmit(submission: any) {
+    console.log(submission);
+    this.formService
+      .postSubmission(this.route.snapshot.paramMap.get('id'), submission)
+      .subscribe((formSubmissionResponse) => {
+        console.log(formSubmissionResponse);
+      });
   }
 
   getFormSchema(formId: string) {

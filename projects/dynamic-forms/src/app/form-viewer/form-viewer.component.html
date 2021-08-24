@@ -1,1 +1,1 @@
-<formio [src]="this.formSubmissionUrl" [form]="this.formSchema"></formio>
+<formio [src]="formSubmissionUrl" [form]="formSchema" [options]="options" (submit)="onSubmit($event.data)"></formio>
