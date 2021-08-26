@@ -1,0 +1,16 @@
+# Useful Form.IO links
+
+1. JavaScript SDK documentation https://formio.github.io/formio.js/docs/
+2. Form Renderer Events https://docs.form.io/developers/form-renderer#form-events
+3. Form Renderer Options https://docs.form.io/developers/form-renderer#form-renderer-options
+4. Form Builder Options https://docs.form.io/developers/form-builder#form-builder-options
+5. Form Builder Events https://docs.form.io/developers/form-builder#events
+6. Form Builder Components https://docs.form.io/userguide/forms/form-components
+6. Form Renderer (Angular) documentation https://github.com/formio/angular/wiki/Form-Renderer
+
+# Other useful threads
+
+1. https://github.com/formio/angular/issues/312
+2. https://github.com/formio/angular/issues/476 - Fomio instance and custom submit button
+3. https://github.com/formio/angular/issues/422 - Hidden submit button
+4. https://help.form.io/userguide/forms/form-building - Form Building API patterns
