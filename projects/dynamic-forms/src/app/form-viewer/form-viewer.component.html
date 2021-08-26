@@ -1,1 +1,2 @@
-<formio [src]="formSubmissionUrl" [form]="formSchema" [options]="options" (submit)="onSubmit($event.data)"></formio>
+<formio [form]="formSchema" (customEvent)="submitForm($event)">
+</formio>

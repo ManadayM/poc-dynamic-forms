@@ -2,6 +2,14 @@
 
 This POC requires Node v10 and Angular v7. Usage of `Node Version Manager (nvm)` is recommended to avoid causing conflicts with your latest projects.
 
+1. `nvm use` to set required node runtime version as set inside `.nvmrc` file.
+2. `npm install` to install dependencies.
+
+# Running on local
+
+1. `npm start` - This will start frontend form builder and renderer application. Check http://localhost:4200.
+2. `npm run mock-api` - This will start mock api server. Any data you generate will be saved inside `mock-api/db.json` file.
+
 # CitFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.

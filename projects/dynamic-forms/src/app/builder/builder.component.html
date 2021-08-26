@@ -33,7 +33,7 @@
 
       <!-- Builder -->
       <nb-step label="Build">
-        <form-builder [form]="formSchema" [options]="{'noDefaultSubmitButton': true}" (change)="onChange($event)">
+        <form-builder [form]="formSchema" [options]="formBuilderOptions" (change)="onChange($event)">
         </form-builder>
       </nb-step>
 
